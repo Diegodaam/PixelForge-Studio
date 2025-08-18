@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <style>
+      body {
+        background-color: #0b1220;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        line-height: 1.6;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .container > div img {
+        padding: 20px;
+        background-color: #0f192e;
+        border-radius: 20px;
+      }
+
+      .text {
+        color: #e0e0e0;
+        background-color: #0f192e;
+        padding: 30px;
+      }
+
+      .logo {
+        border-radius: 50%;
+      }
+
+      .gradient-background {
+        position: relative;
+        background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+        background-size: 180% 180%;
+        animation: gradient-animation 18s ease infinite;
+        z-index: 1;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+
+      .navbar-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .navbar-links a {
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .navbar-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media (max-width: 900px) {
+        .hamburger {
+          display: block;
+        }
+
+        .navbar-links {
+          display: none; 
+          flex-direction: column;
+          gap: 0.5rem;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .navbar-links.active {
+          display: flex; 
+        }
+
+        .container{
+            display: block;
+        }
+
+        
+      }
+    </style>
+  </head>
+  <body>
+    <section data-aos="fade-left">
+      <section id="header">
+        <div class="gradient-background">
+          <div class="navBar">
+            <nav>
+              <div class="navbar-container">
+                <img
+                  class="logo"
+                  src="./assets/logo.jpg"
+                  alt="Logo"
+                  width="60px"
+                />
+
+                
+                <button class="hamburger" id="hamburger">☰</button>
+
+                <ul class="navbar-links" id="navbar-links">
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./About.html">About</a></li>
+                  <li><a href="./Contact.html">Contact</a></li>
+                  <li><a href="./Services.html">services</a></li>
+                </ul>
+              </div>
+            </nav>
+            <hr />
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <div>
+          <img src="./assets/foto.png" width="350px" alt="Foto" />
+        </div>
+        <div class="text">
+          <h1 style="text-align: center">Diego Arturo Aguilar Moreno</h1>
+          <p style="text-align: justify">
+            I am a passionate and motivated software developer with a strong
+            foundation in programming and problem-solving. I enjoy tackling
+            challenging projects and continuously learning new technologies to
+            enhance my skills. I am detail-oriented, curious, and committed to
+            delivering high-quality work. I thrive in collaborative
+            environments, yet I am also capable of working independently to
+            achieve goals. My dedication to continuous improvement drives me to
+            explore innovative solutions and stay up-to-date with the latest
+            trends in software development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

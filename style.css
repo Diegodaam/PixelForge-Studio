@@ -1,0 +1,501 @@
+/* ====== General ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0B1220;
+  color: white;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ====== Navbar ====== */
+.logo{
+    border-radius: 50%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media(min-width: 900px){
+    .title{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  /* Navbar */
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    align-self: flex-end;
+    font-size: 2rem;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .navbar-links li a {
+    padding: 0.8rem 0;
+    display: block;
+  }
+
+  /* Hero Section */
+  .gradient-background {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  
+
+  .title h1 {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .title p {
+    max-width: 90%;
+    font-size: 16px;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  /* Carousel */
+  .carousel-container {
+    max-width: 100%;
+  }
+
+  .carousel-caption {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  /* Products Section */
+  .container3-1 {
+    flex-direction: column;
+    gap: 1rem;
+    color: black;
+  }
+
+  .container3-1 div {
+    width: 100%;
+  }
+
+
+  /* Info Sections */
+  .container3-2 {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #paragraph-web {
+    padding: 20px;
+  }
+
+  .background-img5 img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Tools */
+  .tools {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Cards */
+  .container4 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  /* Footer */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer div {
+    margin-bottom: 10px;
+  }
+
+}
+
+
+
+
+/* ====== Hero Section ====== */
+.gradient-background {
+  position: relative; /* Necesario para posicionar ::after */
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+  z-index: 1; 
+
+  padding: 20px;
+  height: 600px;
+}
+
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 80%, #0B1220 100%);
+  pointer-events: none; /* No bloquea clics */
+  z-index: 2; /* Capa sobre el fondo, pero bajo el contenido */
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title h1 {
+  font-size: 75px;
+  margin-bottom: 1rem;
+
+}
+
+.title p {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ====== Carousel ====== */
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  display: none;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-caption {
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 1rem;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-controls button {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+/* ====== Section Titles ====== */
+.section-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* ====== Products ====== */
+.container3 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.container3-1 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+    color: black;
+}
+
+.container3-1 div {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+}
+
+.mi-boton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: transform 0.3s ease; /* Para animación suave */
+
+}
+
+.mi-boton:hover {
+  transform: scale(1.3); /* Hace que el botón crezca un poco */
+
+}
+
+/* ====== Info Sections ====== */
+.info-section {
+  padding: 2rem;
+}
+
+.container3-2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.container3-2 img {
+  max-width: 100%;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.background-img5{
+    background-color: #0F192E;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#paragraph-web{
+  padding: 50px;
+  background-color: #0F192E;
+}
+
+.tools img{
+  border-radius: 10%;
+}
+
+.tools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ====== Cards ====== */
+.container4 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+      color: black;
+
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background: #f8f9fa;
+  padding: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-header.primary {
+  background: #007bff;
+  color: white;
+}
+
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-body h1 {
+  margin: 1rem 0;
+}
+
+.card-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-body li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-primary {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 10px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* ====== Buttons ====== */
+.btn-outline {
+  background: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/*=======Footer=======*/
+
+.footer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer div{
+    margin: 30px;
+}

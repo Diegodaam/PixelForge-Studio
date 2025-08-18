@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <section>
+      <section id="header">
+        <div class="gradient-background">
+          <div class="navBar">
+            <nav>
+              <div class="navbar-container">
+                <img
+                  class="logo"
+                  src="./assets/logo.jpg"
+                  alt="Logo"
+                  width="60px"
+                />
+                <button class="hamburger" id="hamburger">☰</button>
+                <ul class="navbar-links" id="navbar-links">
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./About.html">About</a></li>
+                  <li><a href="./Contact.html">Contact</a></li>
+                  <li><a href="./Services.html">services</a></li>
+                </ul>
+              </div>
+            </nav>
+            <hr />
+          </div>
+        </div>
+      </section>
+    </section>
+    <section data-aos="fade-right">
+      <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <div class="contact-container">
+          <form class="contact-form">
+            <input type="text" placeholder="Nombre" required />
+            <input type="email" placeholder="Correo" required />
+            <input type="tel" placeholder="Teléfono" required />
+            <textarea placeholder="Mensaje" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119430.283254394!2d-103.54082107543945!3d20.702249793457415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428af003fef1915%3A0x77b7c2884a8a3b42!2sCETI!5e0!3m2!1ses-419!2smx!4v1755322446258!5m2!1ses-419!2smx"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </section>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
